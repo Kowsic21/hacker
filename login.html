@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Instagram — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fafafa;
+      --card:#ffffff;
+      --muted:#8e8e8e;
+      --accent-gradient: linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+      --input-border:#dbdbdb;
+      --shadow: 0 4px 18px rgba(0,0,0,0.08);
+      --radius:8px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#111}
+
+    .page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+
+    .wrap{display:flex;gap:32px;align-items:center}
+
+    /* Card */
+    .card{width:360px;background:var(--card);border-radius:12px;padding:32px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.03)}
+
+    /* Left promotional box (optional) */
+    .promo{width:380px;height:520px;border-radius:12px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-shadow:var(--shadow)}
+
+    .logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .brand-name{font-weight:600;font-size:18px}
+
+    .insta-mark{width:44px;height:44px;display:inline-block}
+
+    h1{font-size:22px;margin:8px 0}
+    p.small{font-size:13px;color:var(--muted);margin:0}
+
+    form{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+
+    input[type="text"],input[type="password"]{height:42px;padding:0 12px;border-radius:6px;border:1px solid var(--input-border);background:#fff;font-size:14px}
+    button.primary{height:42px;border-radius:6px;border:0;background:var(--accent-gradient);color:white;font-weight:600;cursor:pointer}
+
+    .muted{font-size:13px;color:var(--muted);text-align:center;margin-top:12px}
+
+    .divider{display:flex;align-items:center;gap:8px;margin:12px 0}
+    .line{flex:1;height:1px;background:#e6e6e6}
+    .or{font-size:13px;color:var(--muted);padding:0 8px}
+
+    .link-like{color:#3897f0;text-decoration:none;font-weight:600}
+
+    .small-action{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
+
+    .fb-login{display:flex;align-items:center;gap:8px;justify-content:center;font-weight:600}
+
+    footer{margin-top:12px;font-size:13px;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){.wrap{flex-direction:column}.promo{order:2}}
+
+    /* Decorative instagram gradient square used in the promo */
+    .gradient-square{width:220px;height:220px;border-radius:42px;display:flex;align-items:center;justify-content:center;background:var(--accent-gradient);box-shadow:0 8px 30px rgba(204,35,102,0.18);}
+    .camera{width:120px;height:120px;opacity:0.95}
+
+    /* subtle footer link row */
+    .signup-row{display:flex;justify-content:center;gap:6px;padding:16px 0}
+
+    /* tiny helpers */
+    .forgot{font-size:13px;color:#00376b;text-align:center;margin-top:6px}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrap">
+
+      <div class="promo" aria-hidden="true">
+        <div class="gradient-square" role="img" aria-label="Instagram gradient sticker">
+          <!-- Simple camera icon inside square -->
+          <svg class="camera" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="white" opacity="0.12"/>
+            <path d="M7.5 7.5h9a1 1 0 0 1 1 1V15a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="11.5" r="2.6" stroke="#fff" stroke-width="1.2"/>
+            <circle cx="17.2" cy="6.8" r="0.6" fill="#fff" />
+          </svg>
+        </div>
+        <h1>Instagram</h1>
+        <p class="small">Connect with friends, share moments and discover photos and videos you love.</p>
+      </div>
+
+      <div>
+        <div class="card" role="main">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <!-- Instagram logo mark + wordmark -->
+            <div class="logo">
+              <svg class="insta-mark" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#f09433"/>
+                    <stop offset="25%" stop-color="#e6683c"/>
+                    <stop offset="50%" stop-color="#dc2743"/>
+                    <stop offset="75%" stop-color="#cc2366"/>
+                    <stop offset="100%" stop-color="#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect x="64" y="64" width="384" height="384" rx="96" fill="url(#g1)"/>
+                <rect x="120" y="120" width="272" height="272" rx="64" fill="white" opacity="0.06"/>
+                <circle cx="256" cy="256" r="68" fill="white" opacity="0.9"/>
+                <circle cx="256" cy="256" r="40" fill="transparent" stroke="white" stroke-width="12"/>
+                <circle cx="368" cy="144" r="18" fill="white" opacity="0.9"/>
+              </svg>
+              <div class="brand-name">Instagram</div>
+            </div>
+
+            <form id="loginForm" onsubmit="event.preventDefault();alert('Pretend login - replace with real backend')">
+              <input type="text" id="username" placeholder="Phone number, username or email" required />
+              <input type="password" id="password" placeholder="Password" required />
+              <button class="primary" type="submit">Log In</button>
+
+              <div class="divider">
+                <div class="line"></div>
+                <div class="or">OR</div>
+                <div class="line"></div>
+              </div>
+
+              <a class="fb-login" href="#" onclick="event.preventDefault();alert('Pretend Facebook login')">
+                <!-- tiny FB icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.07C22 6.49 17.52 2 11.94 2S2 6.49 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H8.12v-2.9h2.32V9.41c0-2.3 1.37-3.56 3.46-3.56.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.69h2.5l-.4 2.9h-2.1V22c4.78-.75 8.44-4.91 8.44-9.93z" fill="#1877f2"/></svg>
+                Continue with Facebook
+              </a>
+
+              <div class="forgot"><a href="#" class="link-like" onclick="event.preventDefault();alert('Forgot password flow')">Forgot password?</a></div>
+            </form>
+
+            <div class="small-action">Don't have an account? <a href="#" class="link-like" onclick="event.preventDefault();alert('Sign up flow')">Sign up</a></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;background:transparent;border-radius:12px;padding:18px;text-align:center">
+          <div style="background:var(--card);padding:12px;border-radius:8px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.03)">
+            <div class="signup-row">Don't have an account? <a href="#" class="link-like" onclick="event.preventDefault();alert('Sign up')">Sign up</a></div>
+          </div>
+
+          <footer>
+            <p style="margin:12px 0;color:var(--muted);font-size:12px">Get the app.</p>
+            <div style="display:flex;gap:8px;justify-content:center">
+              <div style="background:#ddd;padding:8px 12px;border-radius:6px;font-size:13px">App Store</div>
+              <div style="background:#ddd;padding:8px 12px;border-radius:6px;font-size:13px">Google Play</div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- tiny script to show basic validation demo -->
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      if(!u || !p) return alert('Please fill both fields.');
+      // In real app, send fetch() to your backend here
+      alert('Login submitted for: ' + u + '\n(This is a static demo page)');
+    });
+  </script>
+</body>
+</html>
